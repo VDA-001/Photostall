@@ -1,0 +1,528 @@
+body {
+  overflow-x: hidden;
+}
+.LOGO {
+  background-color: rgb(247, 247, 247);
+}
+.LOGO:hover {
+  cursor: pointer;
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  color: rgb(247, 247, 247);
+  height: auto;
+}
+#myBtn {
+  float: right;
+}
+#Login-1 {
+  margin-left: 15px;
+  margin-right: 10px;
+  border-left: 1px solid black;
+}
+#LOGO-id {
+  width: 90px;
+  height: 53px;
+  margin-left: 0px;
+  padding-right: 10px;
+}
+#Category-head {
+  width: 50%;
+}
+.Profile-Elements {
+  margin-top: 80px;
+}
+.ProfileImg {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: -30px;
+}
+.Profile-Details {
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .ProfileImg {
+    width: 150px;
+    height: auto;
+    margin-left: -15px;
+  }
+  .Profile-Details {
+    margin-left: 0px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #Category-head {
+    width: 100%;
+  }
+  #myBtn {
+    float: none;
+  }
+  #Login-1 {
+    margin-left: 0px;
+    margin-right: 10px;
+    border-left: 0px;
+  }
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: rgb(247, 247, 247);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  float: right;
+  transition: 0.2s;
+}
+
+.topnav a:hover {
+  background-color: rgb(247, 247, 247);
+  color: rgb(0, 0, 0);
+}
+
+.topnav a.active {
+  background-color: #8a8a8a;
+  color: rgb(0, 0, 0);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  #myBtn {
+    float: none;
+  }
+}
+#BG-1 {
+  width: 100%;
+  height: 700px;
+  background-color: black;
+  background-size: 1300px 900px;
+  background-image: url("/static/BG-1.jpg");
+  opacity: 1.5;
+}
+.Home-content {
+  color: white;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.pins {
+  color: white;
+  text-decoration: none;
+}
+.pins:hover {
+  color: rgb(221, 218, 218);
+}
+.He {
+  width: 20px;
+  color: rgb(248, 248, 248);
+  margin-left: 5px;
+  font-size: 20px;
+  margin-top: 7px;
+}
+.He:hover {
+  text-decoration: none;
+  color: rgb(218, 218, 218);
+}
+.Hell {
+  width: 100%;
+}
+#Page {
+  padding: 10px;
+  padding-top: 10%;
+}
+.Topic-Box {
+  display: inline-block;
+  width: 30%;
+  height: auto;
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 10px;
+  margin: 13px;
+}
+@media screen and (max-width: 1000px) {
+  .Topic-Box {
+    width: 45%;
+    margin: 8px;
+  }
+}
+.Account-Body {
+  background-color: rgb(228, 228, 228);
+  padding-top: 30px;
+}
+.Account-Block-Login {
+  margin: 40px;
+  height: 340px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 65%;
+  margin-left: 15%;
+  border-radius: 10px;
+}
+.Account-Block-Left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgb(165, 165, 165);
+  padding: 30px;
+  float: left;
+  width: 50%;
+  height: 100%;
+  color: rgb(0, 0, 0);
+}
+.Account-Block-Right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 40px;
+  background-color: rgb(248, 248, 248);
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+.Account-Logo-Login {
+  margin-top: 20px;
+  margin-left: 70px;
+  width: 180px;
+  height: auto;
+}
+.Account-Alert {
+  margin-top: 30px;
+  width: 30%;
+  margin-left: 35%;
+}
+.m-ele {
+  display: none;
+  text-align: center;
+}
+span {
+  font-size: 20px;
+  color: black;
+}
+span a {
+  color: gray;
+}
+span a:hover {
+  color: black;
+}
+.Account-Name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.Account-Heading {
+  text-align: center;
+  text-decoration: underline;
+}
+@media screen and (max-width: 1000px) {
+  .Account-Block-Login {
+    width: 75%;
+    margin-left: 10px;
+  }
+  .Account-Block-Register {
+    width: 93%;
+    margin-left: 7%;
+  }
+  .Account-Logo-Login {
+    margin-left: 15%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .Account-Block-Login {
+    width: 85%;
+    margin-left: 7%;
+  }
+  .Account-Block-Register {
+    width: 98%;
+    margin-left: 20px;
+    height: 450px;
+  }
+  .Account-Logo-Login {
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 795px) {
+  .Account-Block-Login {
+    width: 95%;
+    margin-left: 20px;
+    height: 340px;
+  }
+  .Account-Logo-Login {
+    margin-left: 0px;
+  }
+}
+.Account-Logo-Register {
+  margin-top: 80px;
+  margin-left: 70px;
+  width: 180px;
+  height: auto;
+}
+.Account-Block-Register {
+  height: 480px;
+  margin: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 75%;
+  margin-left: 15%;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1100px) {
+  .Account-Block-Register {
+    width: 80%;
+    margin-left: 12%;
+  }
+}
+@media screen and (max-width: 830px) {
+  .Account-Block-Register {
+    margin-top: 15px;
+    margin-left: 12px;
+    width: 98%;
+  }
+  .Account-Block-Left-register {
+    display: none;
+  }
+  .Account-Block-Right-register {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .m-ele-register {
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Account-Block-Register {
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Account-Block-Login {
+    margin-top: 15px;
+    margin-left: 12px;
+    width: 95%;
+  }
+  .Account-Block-Left-login {
+    display: none;
+  }
+  .Account-Block-Right-login {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .m-ele-login {
+    display: block;
+  }
+}
+@media screen and (max-width: 650px) {
+  .Topic-Box {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+.Topic-Images {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.Headings {
+  font-weight: bold;
+  font-size: 22px;
+  color: black;
+}
+.Gray-class {
+  color: gray;
+}
+.Gray-class:hover {
+  color: rgb(46, 46, 46);
+}
+.Para {
+  margin-top: 20px;
+}
+.Topic-Box:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+.Topic-Logo {
+  width: 60px;
+  height: 40px;
+  float: right;
+}
+.Div-Link:hover {
+  text-decoration: none;
+}
+.Download-Button {
+  display: none;
+  float: right;
+  position: relative;
+  top: -75px;
+  left: -10px;
+  border: 2px solid black;
+  height: 35px;
+  border-radius: 3px;
+  background-color: transparent;
+  outline: none;
+}
+.Download-Link {
+  color: rgb(0, 0, 0);
+}
+.Download-Link:hover {
+  color: black;
+  text-decoration: none;
+}
+@media (max-width: 1700px) {
+  #photos {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-gap: 10px;
+    column-count: 4;
+    column-gap: 10px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+    padding-right: 15px;
+  }
+  .navbar {
+    float: none;
+    width: 100%;
+  }
+}
+@media (max-width: 490px) {
+  #photos {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    column-gap: 10px;
+    margin-right: 15px;
+  }
+}
+#photos img {
+  width: 100% !important;
+  height: auto !important;
+  float: left;
+  margin: 15px;
+  display: block;
+  transition: 0.2s;
+  -moz-transition:0.2s;
+}
+#photos img:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.7;
+  -moz-opacity:0.7;
+  cursor: zoom-in;
+  -moz-cursor:zoom-in;
+  filter: blur(1px);
+  -moz-filter:blur(1px);
+}
+.Image-Container .Download-Button {
+  display: none;
+  float: right;
+  position: relative;
+  top: -60px;
+  left: 40px;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  height: 35px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.5s;
+  outline: none;
+}
+#Username-Link {
+  color: black;
+}
+.Download-Link {
+  transition: 0.5s;
+}
+.Download-Button {
+  transition: 0.5s;
+}
+.Download-Link:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.Download-Button:hover {
+  background-color: rgb(0, 0, 0);
+}
+.Download-Button:hover .Download-Link {
+  color: white;
+}
+.Download-Button-Modal {
+  background-color: transparent;
+  border: 2px solid gray;
+  transition: 0.2s;
+}
+.Download-Link-Modal {
+  color: gray;
+  transition: 0.2s;
+}
+.Download-Button-Modal:hover .Download-Link-Modal {
+  color: white;
+  text-decoration: none;
+}
+#account-block-register {
+  height: 480px;
+}
+.Account-Logo-Register {
+  margin-top: 80px;
+  margin-left: 70px;
+  width: 180px;
+  height: auto;
+}
+.Account-Body {
+  background-color: rgb(228, 228, 228);
+  padding-top: 30px;
+}
+.Account-Block {
+  margin: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 65%;
+  margin-left: 15%;
+  border-radius: 10px;
+}
+#account-body-login {
+  height: 320px;
+}
+span a {
+  color: rgb(61, 61, 61);
+}

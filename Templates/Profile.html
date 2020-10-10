@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Photostall</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/CSS/CssFiles.css' %}"
+    />
+  </head>
+  <body style="background-color: rgb(247, 247, 247);">
+    <div class="topnav fixed-top" id="myTopnav">
+      <img
+        src="{% static 'Logo-PhotoStall.png' %}"
+        onclick="window.location.href='/'"
+        class="LOGO"
+        id="LOGO-id"
+      />
+      {% if user.is_authenticated %}
+      <a class="nav-link" href="/accounts/Logout">Logout</a>
+      <a
+        class="nav-link"
+        href="Profile/{{user.username}}"
+        style="padding: 12px; margin-left: 15px;"
+        ><i style="font-size: 28px;" class="fa">&#xf2be;</i></a
+      >
+      {% else %}
+      <a
+        href="#"
+        style="
+          padding: 0px;
+          margin-top: 7px;
+          margin-right: 10px;
+          border-radius: 5px;
+          margin-left: 10px;
+        "
+        ><button
+          class="btn btn-outline-light my-2 my-sm-0"
+          onclick="window.location.href='/accounts/Register'"
+          id="myBtn"
+          type="submit"
+        >
+          Register
+        </button></a
+      >
+      <a class="nav-link" id="Login-1" href="/accounts/Login">Login</a>
+      {% endif %}
+      <a
+        href="#"
+        style="
+          padding: 0px;
+          margin-top: 7px;
+          margin-left: 10px;
+          border-radius: 5px;
+        "
+        ><button
+          type="button"
+          id="myBtn"
+          class="btn btn-outline-light nav-ele"
+          onclick="window.location.href='/Submit'"
+        >
+          Submit a photo
+        </button></a
+      >
+      <a href="/Topic/" class="nav-ele">Topic</a>
+      <a href="/" class="nav-ele">Home</a>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="container Profile-Elements">
+      <img src="{% static 'Profile-pic.png' %}" class="ProfileImg" />
+      <div class="Profile-Details">
+        <h1>{{user2.first_name}} {{user2.last_name}}</h1>
+        <label>@{{user2.username}}</label>
+        <p>
+          Download free, beautiful high-quality photos curated by
+          {{user2.first_name}}.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <section id="photos">
+        {% for img in images %}
+        <div class="Image-Container">
+          <img
+            src="{{img.image.url}}"
+            class="Imagee"
+            onclick="showModalwithImage('{{img.image.url}}')"
+            alt=""
+          />
+          <button class="Download-Button">
+            <a href="{{img.image.url}}" class="Download-Link" download
+              ><b>Download</b></a
+            >
+          </button>
+        </div>
+        {% endfor %}
+      </section>
+      <div
+        class="modal fade"
+        id="Image-Modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true" style="font-size: 24px;">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="#" id="image-show" class="img-fluid" />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="Download-Button-Modal btn btn-outline-secondary"
+              >
+                <a href="" id="download-l" class="Download-Link-Modal" download
+                  ><b>Download</b></a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".Image-Container").hover(
+        function () {
+          $(this)
+            .find(".Download-Button")
+            .css("display", "block")
+            .css("margin-bottom", "-35px");
+        },
+        function () {
+          $(this)
+            .find(".Download-Button")
+            .css("display", "none")
+            .css("margin-bottom", "-35px");
+        }
+      );
+      function showModalwithImage(imageUrl) {
+        $("#Image-Modal").modal("show");
+        $("#image-show").attr("src", `${imageUrl}`);
+        $("#download-l").attr("href", `${imageUrl}`);
+      }
+    </script>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav fixed-top") {
+          x.className += " responsive";
+          document.getElementById("LOGO-id").style.visibility = "hidden";
+        } else {
+          x.className = "topnav fixed-top";
+          document.getElementById("LOGO-id").style.visibility = "visible";
+        }
+      }
+    </script>
+  </body>
+</html>

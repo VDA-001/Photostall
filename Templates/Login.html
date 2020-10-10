@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '/CSS/CssFiles.css' %}"
+    />
+    <style>
+      @media screen and (max-width: 600px) {
+        .Account-Block-Login {
+          margin-top: 15px;
+          margin-left: 9px;
+          width: 95%;
+        }
+        .Account-Block-Left {
+          display: none;
+        }
+        .Account-Block-Right {
+          width: 100%;
+          border-radius: 10px;
+        }
+        .m-ele {
+          display: block;
+        }
+        .Account-Block-Right a {
+          color: gray;
+        }
+        .Account-Block-Right a:hover {
+          color: black;
+        }
+        .Account-Alert {
+          width: 100%;
+          margin-left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body class="Account-Body" id="account-body-login">
+    <h1 class="Account-Heading">Account Login</h1>
+    <h3 class="m-ele">Welcome back to Photostall</h3>
+    <div class="Account-Block-Login">
+      <div class="Account-Block-Left">
+        <img
+          src="{% static 'Logo-PhotoStall.png' %}"
+          class="Account-Logo-Login"
+        />
+        <h3>Welcome back to Photostall</h3>
+        <br />
+        <span>Don't have an account?<a href="Register">Register</a></span>
+      </div>
+
+      <div class="Account-Block-Right">
+        <form action="Login" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="Account-Username" class="Account-Name"
+              >Username :</label
+            >
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              id="Account-Username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password" class="Account-Name">Password :</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <br />
+        <span class="m-ele"
+          >Don't have an account?<a href="Register">Register</a></span
+        >
+      </div>
+    </div>
+    <div>
+      {% for message in messages %}
+      <h3 class="alert alert-warning fixed-top Account-Alert" role="alert">
+        {{message}}
+      </h3>
+      {% endfor %}
+    </div>
+  </body>
+</html>
