@@ -461,12 +461,15 @@ span a:hover {
   top: -60px;
   left: 40px;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   height: 35px;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: white;
   transition: 0.5s;
   outline: none;
+}
+.Image-Container:hover .Download-Button{
+  opacity: 1;
 }
 #Username-Link {
   color: black;

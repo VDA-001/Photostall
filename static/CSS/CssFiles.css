@@ -461,10 +461,10 @@ span a:hover {
   top: -60px;
   left: 40px;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   height: 35px;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: white;
   transition: 0.5s;
   outline: none;
 }
@@ -482,7 +482,8 @@ span a:hover {
   text-decoration: none;
 }
 .Download-Button:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(59, 59, 59);
+  border-color: rgb(59, 59, 59);
 }
 .Download-Button:hover .Download-Link {
   color: white;
