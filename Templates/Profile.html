@@ -33,7 +33,7 @@
       <a class="nav-link" href="/accounts/Logout">Logout</a>
       <a
         class="nav-link"
-        href="Profile/{{user.username}}"
+        href="/Profile/{{user.username}}"
         style="padding: 12px; margin-left: 15px;"
         ><i style="font-size: 28px;" class="fa">&#xf2be;</i></a
       >
@@ -104,11 +104,7 @@
             onclick="showModalwithImage('{{img.image.url}}')"
             alt=""
           />
-          <button class="Download-Button">
-            <a href="{{img.image.url}}" class="Download-Link" download
-              ><b>Download</b></a
-            >
-          </button>
+          
         </div>
         {% endfor %}
       </section>

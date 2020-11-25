@@ -69,7 +69,7 @@
         ><button
           type="button"
           id="myBtn"
-          class="btn btn-outline-light nav-ele"
+          class="btn  nav-ele"
           onclick="window.location.href='/Submit'"
         >
           Submit a photo
@@ -84,8 +84,9 @@
     </div>
     <div>
       <div id="BG-1"></div>
+      
       <div class="Home-content" id="myDiv">
-        <h1>Photostall</h1>
+        <h1 class="Header">Welcome to Photostall</h1>
         <h5>
           There are no rules for good photographs, there are only good
           photographs
@@ -93,7 +94,7 @@
         <br />
         <label style="font-weight: bold;">Trending :</label
         ><a href="Topic/Images/1" class="pins">Travel</a>,
-        <a href="Topic/Images/7" class="pins">Cars</a><br />
+        <a href="Topic/Images/3" class="pins">Animals</a><br />
         <label> Join us at : </label>
         <a
           href="https://www.instagram.com/_v_ishhh_/"
@@ -119,11 +120,11 @@
           onclick="showModalwithImage('{{img.image.url}}','{{img.username}}')"
           alt=""
         />
-        <button class="Download-Button">
+        <!-- <button class="Download-Button">
           <a href="{{img.image.url}}" class="Download-Link" download
             ><b>Download</b></a
           >
-        </button>
+        </button> -->
       </div>
       {% endfor %}
     </section>

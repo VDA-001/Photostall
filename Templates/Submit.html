@@ -15,7 +15,10 @@
 </head>
 <body style="background-color: rgb(214, 214, 214);">
     <h1 class="container-fluid" style="text-decoration: underline;margin:20px;">Add Photo</h1>
+    <button class="HomeDirectButton btn btn-outline-dark" style="margin-left: 40px;" onclick="window.location.href='/'">Back to Home</button>
+    <br />
     <div class="form-group container-fluid" style="margin:20px;">
+        
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %} 
         {{ form.as_p}}
