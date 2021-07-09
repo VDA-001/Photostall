@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+#Reading .env file
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -77,10 +81,11 @@ WSGI_APPLICATION = 'PhotoStall.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Account',
-        'USER':'postgres',
-        'PASSWORD':'Tbmjg749ns',
-        'HOST':'localhost',
+        'NAME': env('POSTGRES_DB_NAME'),
+        'USER':env('POSTGRES_USER'),
+        'PASSWORD':env('POSTGRES_PASSWORD'),
+        'HOST':env('POSTGRES_HOST'),
+        'PORT':env('POSTGRES_PORT'),
     }
 }
 
@@ -121,10 +126,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
