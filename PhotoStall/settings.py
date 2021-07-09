@@ -27,9 +27,9 @@ environ.Env.read_env()
 SECRET_KEY = 'r%e!yq2q=voi12tzxpgnp#rkj(9%lpl@*n&judidk=0-38(ss^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['photostall.herokuapp.com']
 
 
 # Application definition
